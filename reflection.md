@@ -9,6 +9,8 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   (for example: "the secret number kept changing" or "the hints were backwards").
 
 ---
+The first thing I noticed that was wrong was the hints were backwards. When my guess was lower than the secret number, the hint said "Go LOWER!" and when my guess was higher than the secret number, the hint said to go higher.
+Another bug that I found was that that the "new game" button did not really work since it would show the secret number changing but did not let me start submitting guesses. Another issue is that the number range based on teh difficulty level was not being applied correctly. For example. the range for the easy mode is 1-20 but the secret numbers would be out of this range.
 
 ## 2. How did you use AI as a teammate?
 
@@ -17,6 +19,8 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
 ---
+I used Claude for this project.
+
 
 ## 3. Debugging and testing your fixes
 
