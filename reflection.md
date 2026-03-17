@@ -39,6 +39,7 @@ I decided that a bug was fixed by testing the app manually and verifying the pyt
 - What change did you make that finally gave the game a stable secret number?
 
 ---
+The secret number kept changing because it was originally stored in a normal variable, which gets reassigned every time Streamlit reruns the script on button clicks. I would explain to a friend like this: Streamlit reruns the entire script everytime you interact with something in the app, like clicking a button or typing in a text box, so a session state lets you store values that stay across reruns so that the data does not change. I moved the secrent number into Streamlit's sessopm state using st.session_state.secret and only generated a new number if it did not already exist. The secret number stayed stable and only changed when a new game starts.
 
 ## 5. Looking ahead: your developer habits
 
@@ -46,3 +47,5 @@ I decided that a bug was fixed by testing the app manually and verifying the pyt
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+I would like to continue using short but clear git commits to make it a good habit in order to easily track changes. Since I am still learning how to collaborate with AI, next time I will be more specific when prompting AI to avoid misleading suggestions and save time while still being in control. I learned how much AI generated code can speed up tedious processes like refactoring or debugging. It is important to be specific in prompting AI and carefully check and understand its suggestions instead of blindly accepting them.

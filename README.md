@@ -26,12 +26,22 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+The game is a number guessing game where the player is supposed to guess a secret number. The game provides hints to help the player. The difficulty levels affect the range of numbers and the number of allowed attempts.
 - [ ] Detail which bugs you found.
+The hint messages were backwards. The game told the player to "Go Higher" when the guess was too high and vice versa.
+The "New Game" button did not work properly. Clicking the button did not reset the game state so the player could not submit a guess for the new secret number.
+The difficulty ranges were not being applied correctly. The secret number would fall outside the range specified by the difficulty level.
 - [ ] Explain what fixes you applied.
+I refactored the core game logic functions (check_guess, parse_guess, get_range_for_difficulty, update_score) into logic_utils.py.
+I fixed the hint messages in check_guess() to match the actual comparison logic.
+I updated the "New Game" button to reset all relevant session state variables so that the game starts fresh and works properly.
+I corrected the code to match the number ranges to the difficulty levels
+I wrote and ran pytests to verify that the hint logic and ranges worked as intended.
 
 ## 📸 Demo
 
 - [ ] [Insert a screenshot of your fixed, winning game here]
+![Winning screen of the game](screenshot/gamewin.png)
 
 ## 🚀 Stretch Features
 
