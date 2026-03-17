@@ -19,7 +19,7 @@ Another bug that I found was that that the "new game" button did not really work
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
 ---
-I used Claude for this project.
+One example of a correct AI suggestion was when I asked Claude how to verify that the difficulty ranges were working correctly. It suggested writing a pytest to check that the get_range_for_difficulty function for each difficulty level return the expected values, which was verified by the passed pytest and in-game logic. One example of an incorrect AI suggestion was related to the "New Game" button in which Claude suggested that simply resetting st.session_state.attempts would fix the button. I verified the problem by testing the button in the app and it still did not allow a new game to start properly. I asked Claude to explain the code logic where the issue was occuring and fixed the bug together.
 
 
 ## 3. Debugging and testing your fixes
@@ -30,6 +30,7 @@ I used Claude for this project.
 - Did AI help you design or understand any tests? How?
 
 ---
+I decided that a bug was fixed by testing the app manually and verifying the pytests that targeted the fixed bugs. For example, to verify that check_guess() gave the correct hints, I manually guessed a number above and below the secret number and checked that the messages now matched the logic. Claude helped me design the pytest by suggesting specific cases to check, like confirming the difficulty ranges. Claude also helped me understand how pytest worked in general and how to implement them since I never really used pystest.
 
 ## 4. What did you learn about Streamlit and state?
 

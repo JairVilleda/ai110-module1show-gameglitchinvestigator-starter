@@ -1,5 +1,6 @@
 def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
+    #FIX: refactored logic into logic_utils.py using Claude
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":
@@ -15,6 +16,7 @@ def parse_guess(raw: str):
 
     Returns: (ok: bool, guess_int: int | None, error_message: str | None)
     """
+    #FIX: refactored logic into logic_utils.py using Claude
     if raw is None:
         return False, None, "Enter a guess."
 
@@ -38,11 +40,11 @@ def check_guess(guess, secret):
 
     outcome examples: "Win", "Too High", "Too Low"
     """
+    #FIX: refactored logic into logic_utils.py and fixed the hint messages using Claude
     if guess == secret:
         return "Win", "🎉 Correct!"
-    #FIXME: hint messages are backwards
     try:
-        if guess > secret: # flipped the sign to fix the hint messages
+        if guess > secret: 
             return "Too High", "📉 Go LOWER!"
         else:
             return "Too Low", "📈 Go HIGHER!"
@@ -57,6 +59,7 @@ def check_guess(guess, secret):
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
     """Update score based on outcome and attempt number."""
+    #FIX: refactored logic into logic_utils.py using Claude
     if outcome == "Win":
         points = 100 - 10 * (attempt_number + 1)
         if points < 10:

@@ -15,6 +15,7 @@ def test_guess_too_low():
     result = check_guess(40, 50)
     assert result[0] == "Too Low"
 
+#FIX: added new pytest test with Claude's guidance to verify check_guess logic and difficulty ranges
 def test_check_guess_hints():
     # Guess lower than secret should return "Too Low" with "Go HIGHER!" hint
     assert check_guess(30, 50) == ("Too Low", "📈 Go HIGHER!")
